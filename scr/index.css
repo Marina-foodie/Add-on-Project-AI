@@ -1,5 +1,6 @@
 body {
   background: #dcd6f7;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 h1 {
   font-weight: 800px;
@@ -19,10 +20,13 @@ h1 {
   margin: 50px auto;
   padding: 50px;
   background: #dcd6f7;
+  line-height: 1.5;
+  border-left: 3px solid #424874;
 }
 #searchBar {
   border-radius: 10px;
   border-color: #424874;
+  border: 3px solid;
   box-shadow: none;
   color: #424874;
   width: 10cm;
@@ -33,12 +37,20 @@ h1 {
 #Submit {
   border-radius: 10px;
   background-color: #f4eeff;
+  border: none;
   box-shadow: none;
   color: #f4eeff;
   padding: 10px;
   margin: 10px 0px 10px 0px;
   background: #424874;
 }
-#inputBox {
-  background: ;
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+
+  color: white;
+  text-align: center;
 }
