@@ -1,0 +1,44 @@
+body {
+  background: #dcd6f7;
+}
+h1 {
+  font-weight: 800px;
+  font-size: 36px;
+  line-height: 1.5;
+  color: #363b4e;
+}
+#container {
+  background: #c4bbf0;
+  margin: 120px auto;
+  max-width: 600px;
+  padding: 50px 50px 500px 50px;
+  border-radius: 10px;
+  text-align: center;
+}
+#containerText {
+  margin: 50px auto;
+  padding: 50px;
+  background: #dcd6f7;
+}
+#searchBar {
+  border-radius: 10px;
+  border-color: #424874;
+  box-shadow: none;
+  color: #424874;
+  width: 10cm;
+  background: #f4eeff;
+  margin: 20px 10px 20px 10px;
+  padding: 10px;
+}
+#Submit {
+  border-radius: 10px;
+  background-color: #f4eeff;
+  box-shadow: none;
+  color: #f4eeff;
+  padding: 10px;
+  margin: 10px 0px 10px 0px;
+  background: #424874;
+}
+#inputBox {
+  background: ;
+}
