@@ -81,6 +81,8 @@ h1 {
 }
 #RecipeInstructions ol {
   list-style-type: decimal;
+  list-style-position: inside; 
+  text-align: left
   padding-left: 20px;
   margin: 0;
 }
