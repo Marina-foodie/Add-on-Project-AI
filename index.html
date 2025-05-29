@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="scr/index.css" />
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <title>I Recipe Generator</title>
   </head>
   <body>
@@ -16,7 +17,7 @@
       </header>
       <main>
         <div id="inputBox">
-          <form>
+          <form id="Generator">
             <input
               type="text"
               placeholder="Which ingredients do you have?"
@@ -28,7 +29,7 @@
             <input type="submit" value="Select ingredients" id="Submit" />
           </form>
         </div>
-        <div id="containerText">Recipe is going to be here</div>
+        <div class="containerText" id="containerText"></div>
         <br /><br />
       </main>
       <footer>
