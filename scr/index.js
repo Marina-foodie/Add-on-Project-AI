@@ -1,7 +1,6 @@
 function showRecipe(response) {
   const fullHtml = response.data.answer;
 
-  // Extrahiere Inhalte mit Regex
   const nameMatch = fullHtml.match(/<div id="RecipeName">(.*?)<\/div>/s);
   const ingredientsMatch = fullHtml.match(
     /<div id="RecipeIngridients">(.*?)<\/div>/s
@@ -10,7 +9,6 @@ function showRecipe(response) {
     /<div id="RecipeInstructions">(.*?)<\/div>/s
   );
 
-  // Rezeptname anzeigen
   if (nameMatch) {
     new Typewriter("#RecipeName", {
       strings: nameMatch[1].trim(),
@@ -20,14 +18,13 @@ function showRecipe(response) {
     });
   }
 
-  // Zutatenliste umwandeln in <ul>
   if (ingredientsMatch) {
     let rawIngredients = ingredientsMatch[1].trim();
-    console.log("RAW INGREDIENTS:", rawIngredients); // Zum Debuggen
+    console.log("RAW INGREDIENTS:", rawIngredients);
 
     let listItems = rawIngredients
-      .split(/<br>|[\n\r]/) // <br> oder echte Zeilenumbrüche
-      .map((line) => line.replace(/^[-•*]?\s*/, "").trim()) // entfernt optionales "•"
+      .split(/<br>|[\n\r]/)
+      .map((line) => line.replace(/^[-•*●▪︎‣]+[\s–-]*/, "").trim())
       .filter((line) => line.length > 0)
       .map((line) => `<li>${line}</li>`)
       .join("");
@@ -41,7 +38,7 @@ function showRecipe(response) {
       cursor: "",
     });
   }
-  // Kochanleitung umwandeln in <ol>
+
   if (instructionsMatch) {
     let rawInstructions = instructionsMatch[1].trim();
 
@@ -70,6 +67,10 @@ function generateRecipe(event) {
     "You are a skilled chef who loves to create delicious and creative recipes. When I provide one or more ingredients, generate one complete recipe that meets the following criteria: The recipe must be short and easy to prepare, requiring no more than 30 minutes. Focus on flavor, creativity, and practicality. Structure the output exactly as follows: 1. Title of the recipe and place it with the id=RecipeName, 2. List ingredients with exact quantities using bulletpoints and place it in the section with id = RecipeIngridients 3. Step-by-step cooking instructions, clearly written and easy to follow. Use numbering for the different steps and write them below each other in the section with id = RecipeInstructions. Add one paragraph break between each section. Only return one recipe per input and wait for further user input before generating another. Do not include any explanations or additional text outside the recipe.";
   let prompt = `Create a tasty recipe using the following ingredients ${customerInput.value}. Include a name, ingredient list with quantities, and clear cooking instructions.`;
   let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
+
+  let recipeElement = document.querySelector("#LoadingText");
+  recipeElement.innerHTML = `⏳ Let’s whip up something tasty with ${customerInput.value} — just a moment!`;
+
   axios.get(apiUrl).then(showRecipe);
 }
 
