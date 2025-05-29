@@ -16,13 +16,7 @@ h1 {
   border-radius: 10px;
   text-align: center;
 }
-.containerText {
-  margin: 50px auto;
-  padding: 50px;
-  background: #dcd6f7;
-  line-height: 1.5;
-  border-left: 3px solid #424874;
-}
+
 #searchBar {
   border-radius: 10px;
   border-color: #424874;
@@ -45,12 +39,57 @@ h1 {
   background: #424874;
 }
 
-footer {
-  position: fixed;
-  left: 0;
-  bottom: 20px;
-  width: 100%;
+#RecipeName {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin: 50px 50px 10px 50px;
+  padding: 20px;
+  background: #dcd6f7;
+  line-height: 1.5;
+  border-left: 3px solid #424874;
+}
 
+.RecipeIngridients {
+  text-align: left;
+  font-size: 16px;
+  white-space: pre-line;
+  margin: 0px 50px 10px 50px;
+  padding-left: 20px;
+  background: #dcd6f7;
+  line-height: 1.5;
+  border-left: 3px solid #424874;
+}
+#RecipeIngridients ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 0;
+}
+#RecipeIngridients li {
+  margin-bottom: 5px;
+}
+
+.RecipeInstructions {
+  text-align: left;
+  font-size: 16px;
+  white-space: pre-line;
+  line-height: 1.5;
+  margin: 0px 50px 20px 50px;
+  padding-left: 20px;
+  background: #dcd6f7;
+  border-left: 3px solid #424874;
+}
+#RecipeInstructions ol {
+  list-style-type: decimal;
+  padding-left: 20px;
+  margin: 0;
+}
+
+#RecipeInstructions li {
+  margin-bottom: 8px;
+}
+
+footer {
   color: black;
   text-align: center;
 }

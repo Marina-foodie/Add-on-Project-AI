@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="scr/index.css" />
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     <title>I Recipe Generator</title>
   </head>
   <body>
@@ -28,9 +29,12 @@
             />
             <input type="submit" value="Select ingredients" id="Submit" />
           </form>
+          <div class="RecipeName" id="RecipeName"></div>
+          <br /><br />
         </div>
-        <div class="containerText" id="containerText"></div>
+        <div class="RecipeIngridients" id="RecipeIngridients"></div>
         <br /><br />
+        <div class="RecipeInstructions" id="RecipeInstructions"></div>
       </main>
       <footer>
         This project was coded by
@@ -45,7 +49,7 @@
         <a
           href="https://app.netlify.com/teams/marina-foodie/sites"
           target="_blank"
-          >Netlify</a
+          >Netlify.</a
         >
       </footer>
     </div>
